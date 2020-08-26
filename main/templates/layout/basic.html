@@ -1,0 +1,50 @@
+{% load bootstrap4 %}
+{% load static %}
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Главная{% endblock %} - вакансии</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+
+
+
+
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='slim' %}
+</head>
+
+
+
+<div  class="container-fluid">
+
+<div class="row">
+<div class="col-md-auto nav flex-column border">
+<a class="nav-link root"
+   href="{% url 'main:index' %}">Главная</a>
+
+
+
+   {% for category in categories %}
+       <a href="{% url 'main:by_category' category.pk %}"> {{ category.name}}</a>
+   {% endfor %}
+</nav>
+</div>
+
+
+
+<section class="col border ру-2">
+    {% bootstrap_messages %}
+    {% block content %}
+{% endblock %}
+</section>
+
+</div>
+</div>
+
+
+</body>
+
+</html>

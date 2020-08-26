@@ -1,0 +1,33 @@
+{% extends "layout/basic.html" %}
+
+{% block content %}
+    <h1>Все вакансии</h1>
+
+ {% for vacancie in vacancies %}
+
+    <div>
+        <a href="{% url 'main:vacancy' vacancie.pk %}">{{ vacancie.title }}</a>
+            <h3>Description:</h3>
+            <p>{{ vacancie.description }}</p>
+            <h3>Company:</h3>
+            <p>{{ vacancie.company }}</p>
+            <h3>Location:</h3>
+            <p>{{vacancie.location }}</p>
+            <h3>Category:</h3>
+            <p>{{vacancie.category }}</p>
+            <h3>Skill:</h3>
+            <p>{{vacancie.skill }}</p>
+            <h3>Employment:</h3>
+            <p>{{vacancie.employment}}</p>
+            <h3>Subategory:</h3>
+             {% for v in vacancie.subcategores.all %}
+            <p>{{v}}</p>
+                 {% endfor %}
+
+
+    </div>
+
+    {%endfor %}
+
+{% endblock %}
+

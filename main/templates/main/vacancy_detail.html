@@ -1,0 +1,39 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}
+
+{{ vacancy.title }}
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<h2>Вакания: {{ vacancy.title }} </h2>
+
+
+
+
+    <div>
+
+            <h3>Description:</h3>
+            <p>{{ vacancy.description }}</p>
+            <h3>Company:</h3>
+            <p>{{ vacancy.company }}</p>
+            <h3>Location:</h3>
+            <p>{{ vacancy.location }}</p>
+            <h3>Category:</h3>
+            <p>{{ vacancy.category }}</p>
+            <h3>Skill:</h3>
+            <p>{{ vacancy.skill }}</p>
+            <h3>Employment:</h3>
+            <p>{{vacancy.employment}}</p>
+
+
+    </div>
+
+
+
+{% endblock %}

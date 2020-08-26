@@ -1,0 +1,39 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}
+
+{{current_category.name }}
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<h2>Категория: {{current_category.name}}</h2>
+
+
+ {% for vacancie in vacancies %}
+
+    <div>
+        <h2>{{ vacancie.name }}</h2>
+            <h3>Description:</h3>
+            <p>{{ vacancie.description }}</p>
+            <h3>Company:</h3>
+            <p>{{ vacancie.company }}</p>
+            <h3>Location:</h3>
+            <p>{{vacancie.location }}</p>
+            <h3>Category:</h3>
+            <p>{{vacancie.category }}</p>
+            <h3>Skill:</h3>
+            <p>{{vacancie.skill }}</p>
+            <h3>Employment:</h3>
+            <p>{{vacancie.employment}}</p>
+
+
+    </div>
+
+    {%endfor %}
+
+{% endblock %}
