@@ -7,12 +7,17 @@
 
     <div>
         <a href="{% url 'main:vacancy' vacancie.pk %}">{{ vacancie.title }}</a>
+            <img src="{{vacancie.img.url}}" alt="" />
             <h3>Description:</h3>
             <p>{{ vacancie.description }}</p>
             <h3>Company:</h3>
             <p>{{ vacancie.company }}</p>
             <h3>Location:</h3>
+            {% if vacancie.location == '' %}
+            <p>Не указано</p>
+            {% else %}
             <p>{{vacancie.location }}</p>
+            {% endif %}
             <h3>Category:</h3>
             <p>{{vacancie.category }}</p>
             <h3>Skill:</h3>

@@ -59,6 +59,8 @@ class Vacancie(models.Model):
     employment = models.ForeignKey('Employment_type', null=True, on_delete=models.PROTECT, verbose_name='Employmet type')
     skill = models.ForeignKey('Skill', null=True, on_delete=models.PROTECT,
                                    verbose_name='Skill')
+    img = models.ImageField(upload_to='img', null=True, verbose_name='Vacancy_img'
+                            )
     email = models.EmailField(max_length=50, verbose_name='Email')
     location = models.TextField(null=True, blank=True, verbose_name='Location')
     salary = models.FloatField(null=True, blank=True)
