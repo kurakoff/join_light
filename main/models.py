@@ -18,6 +18,7 @@ class Сategory(models.Model):
 
 class Subcategory(models.Model):
     name = models.CharField(max_length=30, db_index=True, verbose_name='Name')
+                          )
 
     def __str__(self):
         return self.name
@@ -67,6 +68,9 @@ class Vacancie(models.Model):
     company = models.CharField(max_length=70, null=True, blank=True,verbose_name='Company')
     url = models.CharField(max_length=50, null=True, blank=True, verbose_name='Url')
     published = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name='Published')
+    requirements = models.TextField(null=True, blank=True, verbose_name='requirements')
+    tasks = models.TextField(null=True, blank=True, verbose_name='Tasks')
+    terms = models.TextField(null=True, blank=True, verbose_name='Terms')
 
 
     def __str__(self):
