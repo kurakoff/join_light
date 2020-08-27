@@ -18,7 +18,7 @@ class Сategory(models.Model):
 
 class Subcategory(models.Model):
     name = models.CharField(max_length=30, db_index=True, verbose_name='Name')
-    img = models.ImageField(upload_to='img/subcategory', null=True, verbose_name='Subcategory_img')
+    img = models.ImageField(upload_to='img/subcategory', null=True, blank=True, verbose_name='Subcategory_img')
 
     def __str__(self):
         return self.name
@@ -60,7 +60,7 @@ class Vacancie(models.Model):
     employment = models.ForeignKey('Employment_type', null=True, on_delete=models.PROTECT, verbose_name='Employmet type')
     skill = models.ForeignKey('Skill', null=True, on_delete=models.PROTECT,
                                    verbose_name='Skill')
-    img = models.ImageField(upload_to='img', null=True, verbose_name='Vacancy_img'
+    img = models.ImageField(upload_to='img', null=True, blank=True, verbose_name='Vacancy_img'
                             )
     email = models.EmailField(max_length=50, verbose_name='Email')
     location = models.TextField(null=True, blank=True, verbose_name='Location')
