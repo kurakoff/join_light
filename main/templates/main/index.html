@@ -27,6 +27,7 @@
             <h3>Subategory:</h3>
              {% for v in vacancie.subcategores.all %}
             <p>{{v}}</p>
+                 <img src="{{v.t.url}}" alt="" />
                  {% endfor %}
 
 

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Vacancie, Сategory
+from .models import Vacancie, Сategory, Subcategory
 from django. http import HttpResponse, Http404
 from django.template import TemplateDoesNotExist
 
@@ -7,7 +7,7 @@ from django.template import TemplateDoesNotExist
 def index(request):
     vacancies = Vacancie.objects.all()
     categories = Сategory.objects.all()
-    context = {'vacancies': vacancies, 'categories':categories}
+    context = {'vacancies': vacancies, 'categories':categories,}
     return render(request, 'main/index.html', context)
 
 def by_category(request, category_id):

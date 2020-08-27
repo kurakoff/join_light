@@ -18,7 +18,7 @@ class Сategory(models.Model):
 
 class Subcategory(models.Model):
     name = models.CharField(max_length=30, db_index=True, verbose_name='Name')
-                          )
+    img = models.ImageField(upload_to='img/subcategory', null=True, verbose_name='Subcategory_img')
 
     def __str__(self):
         return self.name
