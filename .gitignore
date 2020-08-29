@@ -8,3 +8,4 @@ db.sqlite3
 /comp
 /DATE
 /content/static/CACHE
+/main/migrations

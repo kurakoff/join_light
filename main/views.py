@@ -7,14 +7,16 @@ from django.template import TemplateDoesNotExist
 def index(request):
     vacancies = Vacancie.objects.all()
     categories = Сategory.objects.all()
-    context = {'vacancies': vacancies, 'categories':categories,}
+    count_vacancies = Vacancie.objects.all().count()
+    context = {'vacancies': vacancies, 'categories':categories, 'count_vacancies':count_vacancies}
     return render(request, 'main/index.html', context)
 
 def by_category(request, category_id):
     vacancies = Vacancie.objects.filter(category=category_id)
     categories = Сategory.objects.all()
+    count_vacancies = Vacancie.objects.filter(category=category_id).count()
     current_category = Сategory.objects.get(pk=category_id)
-    context = {'vacancies': vacancies, 'categories': categories, 'current_category':current_category}
+    context = {'vacancies': vacancies, 'categories': categories, 'current_category':current_category,'count_vacancies':count_vacancies}
     return render(request, 'main/by_category.html', context)
 
 
@@ -30,3 +32,5 @@ def book_detail_view(request, vacancy_id):
         'main/vacancy_detail.html',
         context={'vacancy': vacancy, 'categories': categories,}
     )
+
+

@@ -1,13 +1,17 @@
 {% extends "layout/basic.html" %}
-
+{% load humanize %}
+{% load static %}
 {% block content %}
-    <h1>Все вакансии</h1>
 
+    <h1>Все вакансии</h1>
+{{count_vacancies}}
  {% for vacancie in vacancies %}
+
+
 
     <div>
         <a href="{% url 'main:vacancy' vacancie.pk %}">{{ vacancie.title }}</a>
-            
+            <img src="{{vacancie.img.url}}" alt="" />
             <h3>Description:</h3>
             <p>{{ vacancie.description }}</p>
             <h3>Company:</h3>
@@ -24,16 +28,18 @@
             <p>{{vacancie.skill }}</p>
             <h3>Employment:</h3>
             <p>{{vacancie.employment}}</p>
+             <p>{{ vacancie.published|naturalday:'F d' }}</p>
             <h3>Subategory:</h3>
              {% for v in vacancie.subcategores.all %}
             <p>{{v}}</p>
-                 <img src="{{v.t.url}}" alt="" />
+<img src="media/{{v.img}}" alt="" />
                  {% endfor %}
-
 
     </div>
 
     {%endfor %}
+
+
 
 {% endblock %}
 

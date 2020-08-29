@@ -18,7 +18,9 @@ class Сategory(models.Model):
 
 class Subcategory(models.Model):
     name = models.CharField(max_length=30, db_index=True, verbose_name='Name')
-    img = models.ImageField(upload_to='img/subcategory', null=True, blank=True, verbose_name='Subcategory_img')
+    img = models.FileField(upload_to='img', null=True, blank=True, verbose_name='Subcategory_img')
+
+
 
     def __str__(self):
         return self.name
@@ -71,6 +73,7 @@ class Vacancie(models.Model):
     requirements = models.TextField(null=True, blank=True, verbose_name='requirements')
     tasks = models.TextField(null=True, blank=True, verbose_name='Tasks')
     terms = models.TextField(null=True, blank=True, verbose_name='Terms')
+    telegram = models.CharField(max_length=50, null=True, blank=True, verbose_name='Telegram')
 
 
     def __str__(self):
