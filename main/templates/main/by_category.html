@@ -1,41 +1,116 @@
 {% extends "layout/basic.html" %}
-
+{% load static %}
+{% load humanize %}
 {% block title %}
-
 {{current_category.name }}
-
 {% endblock %}
 
+
+    {{current_category.img}}
 
 {% block content %}
 
 
+<div class="block-content padding-x-md flex flex-wrap gap-xs items-center justify-between container width-100% height-xxxl category-block margin-0 margin-right-0 margin-top-lg">
+  <div class="text-lg margin-bottom-0 flex flex-wrap gap-xs items-center left-content"> <img class="margin-bottom-0 margin-right-sm" src="{{category.pk}}/media/{{current_category.img}}">{{current_category.name }}</div>
+  <div class="margin-bottom-0 right-content">{{count_vacancies}} вакансий</div>
 
-<h2>Категория: {{current_category.name}}</h2>
-
-
-    {{count_vacancies}}
-
- {% for vacancie in vacancies %}
-
-    <div>
-        <h2>{{ vacancie.name }}</h2>
-            <h3>Description:</h3>
-            <p>{{ vacancie.description }}</p>
-            <h3>Company:</h3>
-            <p>{{ vacancie.company }}</p>
-            <h3>Location:</h3>
-            <p>{{vacancie.location }}</p>
-            <h3>Category:</h3>
-            <p>{{vacancie.category }}</p>
-            <h3>Skill:</h3>
-            <p>{{vacancie.skill }}</p>
-            <h3>Employment:</h3>
-            <p>{{vacancie.employment}}</p>
+</div>
 
 
+
+
+
+<div class="cd-demo cd-demo-container cd-demo-max-width-xs cd-demo-padding-y-xl js-cd-demo">
+
+
+
+
+
+
+
+
+    <button class="btn width-100% btn--primary flex items-center js-dropdown__trigger justify-between main-link" aria-controls="menu-example">Выбрать категорию
+       <svg width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.99992 7.58576L16.2928 0.292864L17.707 1.70708L8.99992 10.4142L0.292817 1.70708L1.70703 0.292865L8.99992 7.58576Z" fill="#434451" fill-opacity="0.3"/>
+</svg></button>
+
+<menu id="menu-example" class="menu width-100% js-menu">
+
+
+
+
+ {% for category in categories %}
+
+  <li role="menuitem">
+    <a href="{% url 'main:by_category' category.pk %}" class="menu__content js-menu__content">{{category.name}}</a>
+  </li>
+{% endfor %}
+
+</menu>
+
+
+
+
+
+
+
+
+
+</div>
+
+    {% for vacancie in vacancies %}
+<div class="cd-demo cd-demo-container cd-demo-max-width-xs cd-demo-padding-y-xl js-cd-demo">
+
+
+
+
+    <div class="table-card bg radius-md padding-md shadow-xs vacancie-card">
+
+    <div class="flex  items-baseline justify-between">
+
+     <div class="parent width-100% grid gap-xs justify-center">
+      <a href="{% url 'main:vacancy' vacancie.pk %}" class="col-4@sm col-12 vacancie-img-block flex items-baseline"><img class="vacancie-img block" src="{{vacancie.img.url}}"></a>
+      <div class="col-8@sm col-12 ">
+        <div class="parent grid gap-xs flex items-center height-100%">
+            <div class="margin-top-xs col-9@sm order-2 order-1@sm ws-nowrap overflow-hidden vacancie-title"><a class="vacancie-title text-decoration-none" href="{% url 'main:vacancy' vacancie.pk %}">{{vacancie.title}}</a></div>
+    <div class="margin-top-xs col-3@sm order-2@sm text-right timer text-sm">{{ vacancie.published|naturalday:'F d' }}</div>
+            <div class="margin-top-xs col-12@sm order-3@sm order-3 "><div class="vacancie-type padding-x-xs">{{vacancie.category }}</div></div>
+          <div class="margin-top-xs col-3@sm order-4@sm price order-4 ">{{vacancie.salary}} ₽</div>
+          <div class="margin-top-xs col-9@sm order-1 float-right order-5@sm flex items-center justify-end@sm justify-end@sm justify-start text-sm more-info margin-left-0"><img class="margin-right-xxs" src="{% static 'main/img/Geo.svg'%}">{% if vacancie.location == '' %}Не указано{% else %}{{vacancie.location }}{% endif %}<img class="margin-left-xxs margin-right-xxs" src="{% static 'main/img/Calendar.svg'%}">{% if vacancie.employment == '' %}Не указано{% else %}{{vacancie.employment }}{% endif %}<img class="margin-left-xxs margin-right-xxs" src="{% static 'main/img/Level.svg'%}">{% if vacancie.skill == '' %}Не указано{% else %}{{vacancie.skill}}{% endif %}</div>
+        </div>
+
+      </div>
+     </div>
     </div>
 
-    {%endfor %}
+</div>
+
+
+
+
+</div>
+{%endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {% endblock %}

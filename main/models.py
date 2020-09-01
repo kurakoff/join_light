@@ -6,6 +6,8 @@ from django.db import models
 # Create your models here.
 class Сategory(models.Model):
     name = models.CharField(max_length=30, db_index=True, verbose_name='Name')
+    img = models.FileField(upload_to='img', null=True, blank=True, verbose_name='Сategory_img'
+                            )
 
     def __str__(self):
         return self.name

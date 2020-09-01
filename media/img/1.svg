@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="40px" viewBox="0 0 36 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>#027 copy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-3" transform="translate(-109.000000, -1346.000000)">
+            <g id="#027-copy" transform="translate(103.000000, 1342.000000)">
+                <rect id="矩形" fill-rule="nonzero" x="0" y="0" width="48" height="48"></rect>
+                <path d="M40,22 L40,36.9981535 C40,39.7557436 37.7625407,41.9918265 35,41.9925851 L13,41.9986269 C10.2385763,41.9993852 8,39.763962 8,37.0047466 L8,22" id="矩形" stroke="#00D274" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <circle id="椭圆形" fill="#FF9F00" fill-rule="nonzero" cx="24" cy="32" r="2"></circle>
+                <polyline id="直线" stroke="#23AD83" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points="14 14 24 6 34 14"></polyline>
+                <path d="M24,6 L24,26" id="直线" stroke="#23AD83" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

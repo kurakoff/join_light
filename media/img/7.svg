@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>#008 copy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-3" transform="translate(-758.000000, -1707.000000)">
+            <g id="#008-copy" transform="translate(756.000000, 1705.000000)">
+                <rect id="矩形" fill-rule="nonzero" x="0" y="0" width="48" height="48"></rect>
+                <path d="M19,36 L19,33 C19,30.2385763 21.2385763,28 24,28 C26.7614237,28 29,30.2385763 29,33 L29,36 L29,36" id="路径" stroke="#23AD83" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M41,19 L41,39 C41,41.7614237 38.7614237,44 36,44 L11,44 L11,44" id="路径" stroke="#00D274" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M7,19 L7,36" id="路径" stroke="#00D274" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <circle id="椭圆形" fill="#FF9F00" cx="35" cy="28" r="2"></circle>
+                <path d="M8.63850713,5.44965512 C9.39043888,4.6490327 10.8998975,4 11.9912443,4 L36.0087557,4 C37.1084896,4 38.6195066,4.64322644 39.3690005,5.45800238 C39.3690005,5.45800238 44,10 44,13 C44,16.8659932 40.8659932,20 37,20 C34.0539366,20 31.5329477,18.1800396 30.5,15.6030856 C29.4670523,18.1800396 26.9460634,20 24,20 C21.0539366,20 18.5329477,18.1800396 17.5,15.6030856 C16.4670523,18.1800396 13.9460634,20 11,20 C7.13400675,20 4,16.8659932 4,13 C4,10 8.63850713,5.44965512 8.63850713,5.44965512 Z" id="路径" stroke="#00D274" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>
