@@ -34,11 +34,11 @@
  <div class="parent width-100% grid gap-xs padding-top-sm justify-center">
       <div class="col-6@sm col-12 order-1@sm order-2">
         <div class="parent grid gap-xs flex items-center height-100%">
-          <div class="vacancie-detail-titile text-md">Профессиональные навыки</div>
+          <div class="vacancie-detail-titile ">Профессиональные навыки</div>
              {% for v in vacancy.subcategores.all %}
 
 
-          <div class="col-4@sm col-6 flex items-center justify-start text-sm  margin-bottom-xxxs subcategories"><img class="margin-right-xxs" src="../../media/{{v.img}}">{{ v }}</div>
+          <div class="col-4@sm col-6 flex items-center justify-start   margin-bottom-xxxs subcategories"><img class="margin-right-xxs" src="../../media/{{v.img}}">{{ v }}</div>
  {% endfor %}
         </div>
 
@@ -51,21 +51,21 @@
 
    <div class="parent width-100% grid gap-xs padding-top-sm justify-center">
       <div class="col-6@sm col-12 ">
-<div class="vacancie-detail-titile text-md margin-top-xs">Опиcание</div>
-          <div class="vacancie-detail-description margin-top-sm text-sm letter-spacing-lg">{{vacancy.description}}</div>
+<div class="vacancie-detail-titile  margin-top-xs">Опиcание</div>
+          <div class="vacancie-detail-description margin-top-sm letter-spacing-lg">{{vacancy.description}}</div>
 
 
 
 {% if vacancy.requirements == '' or  vacancy.requirements == None %}
           {% else %}
-       <div class="vacancie-detail-titile margin-top-md margin-bottom-0 text-md">Требования</div>
-          <div class="vacancie-detail-description margin-top-sm text-sm letter-spacing-lg">{{vacancy.requirements}}
+       <div class="vacancie-detail-titile margin-top-md margin-bottom-0">Требования</div>
+          <div class="vacancie-detail-description margin-top-sm letter-spacing-lg">{{vacancy.requirements}}
       </div>
           {% endif %}
 {% if vacancy.tasks == '' or  vacancy.tasks == None  %}
           {% else %}
-    <div class="vacancie-detail-titile margin-top-md margin-bottom-0 text-md">Задачи</div>
-          <div class="vacancie-detail-description margin-top-sm text-sm letter-spacing-lg">
+    <div class="vacancie-detail-titile margin-top-md margin-bottom-0 ">Задачи</div>
+          <div class="vacancie-detail-description margin-top-sm  letter-spacing-lg">
      {{vacancy.tasks}}
       </div>
       {% endif %}
@@ -73,8 +73,8 @@
 
       {% if vacancy.terms == '' or vacancy.terms == None  %}
           {% else %}
-<div class="vacancie-detail-titile margin-top-md margin-bottom-0 text-md">Условия</div>
-          <div class="vacancie-detail-description margin-top-sm text-sm letter-spacing-lg">
+<div class="vacancie-detail-titile margin-top-md margin-bottom-0">Условия</div>
+          <div class="vacancie-detail-description margin-top-sm letter-spacing-lg">
       {{vacancy.terms}}
           </div>
       {% endif %}
@@ -83,19 +83,19 @@
 
       <div class="col-6@sm col-12">
           <div class="block margin-auto width-100% vacancie-right">
-<div class="right-vacancie-title text-sm margin-top-md">Компания</div>
-          <div class="right-vacancie-description text-sm margin-top-sm">{{vacancy.company}}</div>
+<div class="right-vacancie-title  margin-top-md">Компания</div>
+          <div class="right-vacancie-description margin-top-sm">{{vacancy.company}}</div>
 
 {% if vacancy.email == '' %}
           {% else %}
 
-<div class="right-vacancie-title text-sm margin-top-md">Контакты</div>
-          <div class="right-vacancie-description text-sm margin-top-sm">{{vacancy.email}}</div>
+<div class="right-vacancie-title  margin-top-md">Контакты</div>
+          <div class="right-vacancie-description margin-top-sm">{{vacancy.email}}</div>
 {% endif %}
-{% if vacancy.telegram == '' %}
+{% if vacancy.telegram == '' or vacancy.telegram == None %}
           {% else %}
-<div class="right-vacancie-title text-sm margin-top-md">Telegram</div>
-          <div class="right-vacancie-description text-sm margin-top-sm">{{vacancy.telegram}}</div>
+<div class="right-vacancie-title  margin-top-md">Telegram</div>
+          <div class="right-vacancie-description  margin-top-sm">{{vacancy.telegram}}</div>
 
 {% endif %}
 <button class="btn btn--primary btn--md block margin-auto width-100% answer text-sm margin-top-sm">Ответить</button>

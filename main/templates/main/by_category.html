@@ -73,11 +73,11 @@
       <a href="{% url 'main:vacancy' vacancie.pk %}" class="col-4@sm col-12 vacancie-img-block flex items-baseline"><img class="vacancie-img block" src="{{vacancie.img.url}}"></a>
       <div class="col-8@sm col-12 ">
         <div class="parent grid gap-xs flex items-center height-100%">
-            <div class="margin-top-xs col-9@sm order-2 order-1@sm ws-nowrap overflow-hidden vacancie-title"><a class="vacancie-title text-decoration-none" href="{% url 'main:vacancy' vacancie.pk %}">{{vacancie.title}}</a></div>
-    <div class="margin-top-xs col-3@sm order-2@sm text-right timer text-sm">{{ vacancie.published|naturalday:'F d' }}</div>
-            <div class="margin-top-xs col-12@sm order-3@sm order-3 "><div class="vacancie-type padding-x-xs">{{vacancie.category }}</div></div>
-          <div class="margin-top-xs col-3@sm order-4@sm price order-4 ">{{vacancie.salary}} ₽</div>
-          <div class="margin-top-xs col-9@sm order-1 float-right order-5@sm flex items-center justify-end@sm justify-end@sm justify-start text-sm more-info margin-left-0"><img class="margin-right-xxs" src="{% static 'main/img/Geo.svg'%}">{% if vacancie.location == '' %}Не указано{% else %}{{vacancie.location }}{% endif %}<img class="margin-left-xxs margin-right-xxs" src="{% static 'main/img/Calendar.svg'%}">{% if vacancie.employment == '' %}Не указано{% else %}{{vacancie.employment }}{% endif %}<img class="margin-left-xxs margin-right-xxs" src="{% static 'main/img/Level.svg'%}">{% if vacancie.skill == '' %}Не указано{% else %}{{vacancie.skill}}{% endif %}</div>
+            <div class="col-9@sm order-2 order-1@sm ws-nowrap overflow-hidden vacancie-title"><a class="vacancie-title text-decoration-none" href="{% url 'main:vacancy' vacancie.pk %}">{{vacancie.title}}</a></div>
+    <div class="col-3@sm order-2@sm text-right timer text-sm">{{ vacancie.published|naturalday:'F d' }}</div>
+            <div class="col-12@sm order-3@sm order-3 "><div class="vacancie-type padding-x-xs">{{vacancie.category }}</div></div>
+          <div class="col-3@sm order-4@sm price order-4 ">{{vacancie.salary}} ₽</div>
+          <div class="col-9@sm order-1 float-right order-5@sm flex items-center justify-end@sm justify-end@sm justify-start text-sm more-info margin-left-0"><img class="margin-right-xxs" src="{% static 'main/img/Geo.svg'%}">{% if vacancie.location == '' %}Не указано{% else %}{{vacancie.location }}{% endif %}<img class="margin-left-xxs margin-right-xxs" src="{% static 'main/img/Calendar.svg'%}">{% if vacancie.employment == '' %}Не указано{% else %}{{vacancie.employment }}{% endif %}<img class="margin-left-xxs margin-right-xxs" src="{% static 'main/img/Level.svg'%}">{% if vacancie.skill == '' %}Не указано{% else %}{{vacancie.skill}}{% endif %}</div>
         </div>
 
       </div>
