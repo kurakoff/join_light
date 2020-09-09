@@ -19147,3 +19147,16 @@ html:not(.js) .f-header__nav {
     color: hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), 0.7);
     margin-right: var(--space-xxs)
 }
+
+
+
+#load {
+ display: none;
+ position: absolute;
+ right: 10px;
+ top: 10px;
+ background: #1c1c21;
+ width: 43px;
+ height: 11px;
+ text-indent: -9999em;
+}

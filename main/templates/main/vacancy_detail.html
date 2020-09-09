@@ -10,100 +10,141 @@
 
 {% block content %}
 
-<div class="margin-top-sm back-button"><a class="margin-left-sm" href="{% url 'main:by_category' vacancy.category.pk %}"><img src="{% static 'main/img/back1.svg'%}"></a></div>
-
-<div class="parent block-content padding-x-md flex flex-wrap gap-xs items-center justify-between container width-100% height-xxxl category-block margin-0 margin-right-0 margin-top-sm">
-
-
-    <div class="col-8 margin-bottom-0 main-title ws-nowrap text-lg overflow-hidden">{{vacancy.title}}</div>
-  <div class="col-4 margin-bottom-0 text-right main-date">{{ vacancy.published|naturalday:'F d' }}</div>
 
 
 
-    <div class="col-6 margin-bottom-0 left-content"><div class="vacancie-type main-type padding-x-xs">{{ vacancy.category}}</div></div>
-  <div class="col-6 margin-bottom-0 right-content text-right text-lg main-price">{{ vacancy.salary}} ₽</div>
 
 
-
-</div>
-
-
-
-<div class="cd-demo cd-demo-container cd-demo-max-width-xxl js-cd-demo">
- <div class="flex items-center justify-start text-sm more-info"><img class="margin-right-xxs" src="{% static 'main/img/Geo.svg'%}">{% if vacancy.location == '' %}Не указано{% else %}{{vacancy.location }}{% endif %}<img class="margin-left-xxs margin-right-xxs" src="{% static 'main/img/Calendar.svg'%}">{% if vacancy.employment == '' %}Не указано{% else %}{{vacancy.employment }}{% endif %}<img class="margin-left-xxs margin-right-xxs" src="{% static 'main/img/Level.svg'%}">{% if vacancy.skill == '' %}Не указано{% else %}{{vacancy.skill}}{% endif %}</div>
- <div class="parent width-100% grid gap-xs padding-top-sm justify-center">
-      <div class="col-6@sm col-12 order-1@sm order-2">
-        <div class="parent grid gap-xs flex items-center height-100%">
-          <div class="vacancie-detail-titile ">Профессиональные навыки</div>
-             {% for v in vacancy.subcategores.all %}
-
-
-          <div class="col-4@sm col-6 flex items-center justify-start   margin-bottom-xxxs subcategories"><img class="margin-right-xxs" src="../../media/{{v.img}}">{{ v }}</div>
- {% endfor %}
-        </div>
-
+    <div class="section">
+    <div class="w-container">
+      <div class="div-for-big-title-in-card">
+        <h1 class="heading-for-card">{{vacancy.title}}</h1>
       </div>
-      <div class="col-6@sm col-12 order-2@sm order-1 vacancie-img-block flex items-baseline">
-   <img class="vacancie-img block" src="{{vacancy.img.url}}">
-
+      <div class="div-block-14">
+        <div class="price">{{ vacancy.salary}} ₽</div>
+        <div class="text-block-4">{{ vacancy.published|naturalday:'F d' }}</div>
       </div>
-     </div>
-
-   <div class="parent width-100% grid gap-xs padding-top-sm justify-center">
-      <div class="col-6@sm col-12 ">
-<div class="vacancie-detail-titile  margin-top-xs">Опиcание</div>
-          <div class="vacancie-detail-description margin-top-sm letter-spacing-lg">{{vacancy.description}}</div>
+    </div>
+  </div>
 
 
 
-{% if vacancy.requirements == '' or  vacancy.requirements == None %}
+
+  <div class="section-2">
+    <div class="container-2 w-container"><a href="{% url 'main:index' %}" class="link-block w-inline-block"><img src="{% static 'main/img/Arrow-back.svg'%}" loading="lazy" data-w-id="290cc1cb-707c-9f09-08f3-ebe6a1ceeb5d" alt="" class="icon-back"></a>
+      <div class="columns w-row">
+        <div class="column w-col w-col-7 w-col-small-small-stack">
+          <div class="parameters">
+            <div class="div-block-for-location"><img src="{% static 'main/img/Geo.svg'%}" loading="lazy" width="30" alt="" class="image-in-card">
+              <div class="text-block-in-card-header">{% if vacancy.location == '' %}Не указано{% else %}{{vacancy.location }}{% endif %}</div>
+            </div>
+            <div class="div-block-for-location-with-margin"><img src="{% static 'main/img/Calendar.svg'%}" loading="lazy" width="30" alt="" class="image-in-card">
+              <div class="text-block-in-card-header">{% if vacancy.employment == '' %}Не указано{% else %}{{vacancy.employment }}{% endif %}</div>
+            </div>
+            <div class="div-block-for-location-with-margin"><img src="{% static 'main/img/Level.svg'%}" loading="lazy" width="30" alt="" class="image-in-card">
+              <div class="text-block-in-card-header">{% if vacancy.skill == '' %}Не указано{% else %}{{vacancy.skill }}{% endif %}</div>
+            </div>
+          </div>
+          <div class="div-block-for-description">
+            <div class="title-big-in-description">Проффесиональные навыки</div>
+            <div class="div-block-11">
+                {% for v in vacancy.subcategores.all %}
+              <div class="div-for-skills">
+                <div class="text-block-5">{{ v }}</div><img src='../../media/{{v.img}}' loading="lazy" width="24" alt="" class="image-skill">
+              </div>
+
+                {% endfor %}
+
+
+            </div>
+          </div>
+          <div class="div-block-for-description">
+            <div class="title-big-in-description">Описание</div>
+            <div class="description-text">{{vacancy.description}}</div>
+          </div>
+
+        {% if vacancy.requirements == '' or  vacancy.requirements == None %}
           {% else %}
-       <div class="vacancie-detail-titile margin-top-md margin-bottom-0">Требования</div>
-          <div class="vacancie-detail-description margin-top-sm letter-spacing-lg">{{vacancy.requirements}}
-      </div>
-          {% endif %}
+          <div class="div-block-for-description">
+
+
+
+
+            <div class="title-big-in-description">Требования</div>
+            <div class="description-text">{{vacancy.requirements}}</div>
+          </div>
+        {% endif %}
 {% if vacancy.tasks == '' or  vacancy.tasks == None  %}
           {% else %}
-    <div class="vacancie-detail-titile margin-top-md margin-bottom-0 ">Задачи</div>
-          <div class="vacancie-detail-description margin-top-sm  letter-spacing-lg">
-     {{vacancy.tasks}}
-      </div>
-      {% endif %}
 
-
-      {% if vacancy.terms == '' or vacancy.terms == None  %}
-          {% else %}
-<div class="vacancie-detail-titile margin-top-md margin-bottom-0">Условия</div>
-          <div class="vacancie-detail-description margin-top-sm letter-spacing-lg">
-      {{vacancy.terms}}
+          <div class="div-block-for-description">
+            <div class="title-big-in-description">Задачи</div>
+            <div class="description-text">{{vacancy.tasks}}</div>
           </div>
-      {% endif %}
-</div>
 
-
-      <div class="col-6@sm col-12">
-          <div class="block margin-auto width-100% vacancie-right">
-<div class="right-vacancie-title  margin-top-md">Компания</div>
-          <div class="right-vacancie-description margin-top-sm">{{vacancy.company}}</div>
-
-{% if vacancy.email == '' %}
+        {% endif %}
+{% if vacancy.terms == '' or vacancy.terms == None  %}
           {% else %}
 
-<div class="right-vacancie-title  margin-top-md">Контакты</div>
-          <div class="right-vacancie-description margin-top-sm">{{vacancy.email}}</div>
+          <div class="div-block-for-description">
+            <div class="title-big-in-description">Условия</div>
+            <div class="description-text">{{vacancy.terms}}</div>
+          </div>
 {% endif %}
-{% if vacancy.telegram == '' or vacancy.telegram == None %}
+
+        </div>
+        <div class="column-2 w-col w-col-5 w-col-small-small-stack"><img src="{{vacancy.img.url}}" loading="lazy" srcset="{{vacancy.img.url}} 500w, {{vacancy.img.url}} 800w, images/Frame-6472.png 1120w" sizes="(max-width: 479px) 93vw, (max-width: 767px) 89vw, (max-width: 991px) 291.65625px, 380px" alt="" class="big-image-in-card">
+          <div>
+            <div class="div-block-contcts">
+              <div class="sub-information-title">Компания</div>
+              <div class="sub-information-text">{{vacancy.company}}</div>
+            </div>
+            <div class="div-block-contcts">
+              <div class="sub-information-title">Категория</div>
+              <div class="sub-information-text">{{vacancy.category}}</div>
+            </div>
+
+                  {% if vacancy.email == '' or vacancy.email == None %}
           {% else %}
-<div class="right-vacancie-title  margin-top-md">Telegram</div>
-          <div class="right-vacancie-description  margin-top-sm">{{vacancy.telegram}}</div>
+            <div class="div-block-contcts">
 
-{% endif %}
-<button class="btn btn--primary btn--md block margin-auto width-100% answer text-sm margin-top-sm">Ответить</button>
-      </div>
-      </div>
-     </div>
 
-</div>
+              <div class="sub-information-title">Контакты</div>
+              <div class="sub-information-text">{{vacancy.email}}</div>
+            </div>
+              {% endif %}
+
+          {% if vacancy.telegram == '' or vacancy.telegram == None %}
+          {% else %}
+
+            <div class="div-block-contcts">
+              <div class="sub-information-title">Telegram</div>
+              <div class="sub-information-text">{{vacancy.telegram}}</div>
+            </div>
+
+          {% endif %}
+          </div>
+          <div class="div-block-13">
+            <div class="form-block-2 w-form">
+              <form id="email-form" name="email-form" data-name="Email Form" method="get" redirect="sizze.io" data-redirect="sizze.io" class="form">
+                <div class="div-block-8">
+                  <div class="link-form">www.example.com</div><a href="#" class="link-block-2 w-inline-block"><img src="{% static 'main/img/Link-button.svg'%}" loading="lazy" data-w-id="bd191b42-e86b-6851-34af-74b340128325" alt="" class="link-button-in-card"></a></div><a data-w-id="266bc4ea-d0ec-e6b7-b560-9f8ff450eb0e" href="#" class="submit-button w-button">Ответить</a></form>
+              <div class="w-form-done">
+                <div>Thank you! Your submission has been received!</div>
+              </div>
+              <div class="w-form-fail">
+                <div>Oops! Something went wrong while submitting the form.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
 
 
 

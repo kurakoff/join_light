@@ -117,6 +117,15 @@ USE_L10N = True
 USE_TZ = True
 
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '465'
+EMAIL_HOST_USER = "sizze.team@gmail.com"
+EMAIL_HOST_PASSWORD = "Doc021295"
+EMAIL_USE_SSL = True
+EMAIL_USE_TLS = False
+DEFAULT_FROM_EMAIL = "sizze.team@gmail.com"
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
