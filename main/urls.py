@@ -12,8 +12,8 @@ urlpatterns = [
     path('<int:category_id>/', by_category, name="by_category"),
     path('vacancy/<int:vacancy_id>/', book_detail_view, name="vacancy"),
     path('', index, name='index'),
-    url(r'^contact/$', views.contactform, name='contact'),
-    url(r'contact/thanks/$', views.thanks, name='thanks'),
+    path('contact/', views.contactform, name='contact'),
+    path('contact/thanks/', views.thanks, name='thanks'),
 
     ]
 
