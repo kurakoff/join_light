@@ -1,35 +1,27 @@
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>{% block title %}Обратная связь{% endblock %}</title>
-  <meta content="width=device-width, initial-scale=1" name="viewport">
+{% extends "layout/basic.html" %}
+{% load humanize %}
+{% load static %}
+{% block content %}
 
-</head>
 
-{% load bootstrap4 %}
-{% bootstrap_css %}
-{% bootstrap_javascript jquery='slim' %}
 
- <div class="panel panel-success">
-  <div class="panel-heading">
-    <h2 class="panel-title">Обратная связь</h2>
+  <div>
+    <div class="w-container">
+      <div class="form-block w-form">
+        <form action="{% url 'main:contact' %}" method="post">
+            {% csrf_token %}
+          <h1 class="heading-2">Связаться с нами</h1><label for="name" class="field-label">Имя</label><input type="text" class="text-field w-input" maxlength="256"  placeholder="Введите имя" id="id_subject" name="subject"><label for="email-2" class="field-label">Email</label><input type="email" class="text-field w-input" maxlength="256"  placeholder="Введите email" id="id_sender" name="sender" required=""><label for="email" class="field-label">Описание вакансии</label><textarea  maxlength="5000" id="id_message" name="message" placeholder="Введите описание вакансии" class="text-field-2 w-input"></textarea>
+          <div class="div-block-12"><input type="submit" value="Отправить" data-wait="Please wait..." data-w-id="2bb717f8-f016-7d68-951e-927195302754" class="submit-button-for-send w-button"></div>
+        </form>
+        <div class="success-message w-form-done">
+          <div class="text-block-15">Спасибо! Ваша заявка успешно отправлена!</div><a data-w-id="c983129e-7b98-cf49-997e-081fb99a881c" href="index.html" class="submit-button-copy w-button">Вернуться на главную</a></div>
+        <div class="w-form-fail">
+          <div>Oops! Something went wrong while submitting the form.</div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="panel-body">
-<div class="well well-lg">
-    <h3></h3>
-<form action="{% url 'main:contact' %}" method="post">
-    {% csrf_token %}
-{%csrf_token %}
-{% bootstrap_form form layout='horizontal' %}
-{% buttons submit="Send" %} {% endbuttons %}
-</form>
-  </div>
-</div>
-</div>
+{% endblock %}
 
 
 
-
-
-</body>
-</html>

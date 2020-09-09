@@ -45,7 +45,6 @@ def contactform(reguest):
             subject = form.cleaned_data['subject']
             sender = form.cleaned_data['sender']
             message = form.cleaned_data['message']
-            new = form.cleaned_data['new']
             copy = form.cleaned_data['copy']
 
             recepients = ['sizze.team@gmail.com']
@@ -53,7 +52,7 @@ def contactform(reguest):
             if copy:
                 recepients.append(sender)
             try:
-                send_mail(subject, message, 'sizze.team@gmail.com', recepients, html_message="Доп"+new)
+                send_mail(subject, message, 'sizze.team@gmail.com', recepients)
             except BadHeaderError: #Защита от уязвимости
                 return HttpResponse('Invalid header found')
             # Переходим на другую страницу, если сообщение отправлено
