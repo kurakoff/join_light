@@ -19,17 +19,21 @@
 
 
       <div class="container w-container">
-    <div class="div-block-16">
+    <div id="change" class="div-block-16">
 
-<a href="{% url 'main:index' %}" target="_blank" class="button w-button">Все</a>
+<a href="{% url 'main:index' %}" target="_blank" class="button w-button ">Все</a>
            {% for category in categories %}
 
-<a href="{% url 'main:by_category' category.pk %}" class="button w-button">{{category.name}}</a>
+<a href="{% url 'main:by_category' category.pk %}" class="button w-button ">{{category.name}}</a>
           {% endfor %}
       </div>
 
+         <div id="content">
 
  {% for vacancie in vacancies %}
+
+
+
       <a id="Card" data-w-id="a4a95af4-a82d-934f-ee9e-417a79bc1356" href="{% url 'main:vacancy' vacancie.pk %}" class="card w-inline-block">
        <div class="w-layout-grid grid"><img src="{{vacancie.img.url}}" loading="lazy" width="195" srcset="{{vacancie.img.url}} 500w, {{vacancie.img.url}} 800w, {{vacancie.img.url}} 1120w" sizes="(max-width: 479px) 74vw, 195px" id="w-node-417a79bc1358-2f7fc846" alt="" class="small-image-in-card">
           <div>
@@ -62,7 +66,9 @@
           </div>
         </div>
       </a>
+
 {% endfor %}
+         </div>
     </div>
 
 
