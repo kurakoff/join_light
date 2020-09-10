@@ -126,15 +126,13 @@
           </div>
           <div class="div-block-13">
             <div class="form-block-2 w-form">
-              <form id="email-form" name="email-form" data-name="Email Form" method="get" redirect="sizze.io" data-redirect="sizze.io" class="form">
+              <div id="email-form"  class="form">
                 <div class="div-block-8">
-                  <div class="link-form">www.example.com</div><a href="#" class="link-block-2 w-inline-block"><img src="{% static 'main/img/Link-button.svg'%}" loading="lazy" data-w-id="bd191b42-e86b-6851-34af-74b340128325" alt="" class="link-button-in-card"></a></div><a data-w-id="266bc4ea-d0ec-e6b7-b560-9f8ff450eb0e" href="#" class="submit-button w-button">Ответить</a></form>
-              <div class="w-form-done">
-                <div>Thank you! Your submission has been received!</div>
+                  <div id="coupon-field" class="link-form">{{vacancy.url}}</div><a class="coupon-btn link-block-2 w-inline-block"><img src="{% static 'main/img/Link-button.svg'%}" loading="lazy" data-w-id="bd191b42-e86b-6851-34af-74b340128325" alt="" class="link-button-in-card"></a></div><a data-w-id="266bc4ea-d0ec-e6b7-b560-9f8ff450eb0e" href="#" class="submit-button w-button">Ответить</a></div>
+                <div class="w-form-fail coupon-alert">
+                <div>Скопировано в буфер обмена</div>
               </div>
-              <div class="w-form-fail">
-                <div>Oops! Something went wrong while submitting the form.</div>
-              </div>
+
             </div>
           </div>
         </div>
