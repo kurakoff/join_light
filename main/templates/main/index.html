@@ -10,7 +10,7 @@
       <div class="div-for-big-title"><img src="{% static 'main/img/All.svg'%}" loading="lazy" width="46" alt="">
         <h1 class="heading-main">Все вакансии</h1>
       </div>
-      <div class="text-block-4">{{count_vacancies}}  объявлений</div>
+      <div class="text-block-4">{{count_vacancies}} объявлений</div>
     </div>
   </div>
 </div>
@@ -62,7 +62,7 @@
             <div class="div-block-4">
               <div class="price">
 
-                  {% if vacancie.salary == '' %}Не указано{% else %}{{vacancie.salary}} ₽{% endif %}
+                  {% if vacancie.salary == '' %}Не указано{% else %}{{ vacancie.salary|floatformat:0 }} ₽{% endif %}
 
                   </div>
             </div>

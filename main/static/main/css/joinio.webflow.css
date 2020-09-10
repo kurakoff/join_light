@@ -404,7 +404,7 @@ a {
 }
 
 .container-2 {
-  margin-bottom: 6em;
+  margin-bottom: 4em;
 }
 
 .div-block-10 {
@@ -784,6 +784,38 @@ a {
   max-width: 100%;
 }
 
+.form-for-answer {
+  margin-top: 2em;
+}
+
+.div-block-18-copy {
+  display: none;
+  margin-top: 2em;
+}
+
+.copy-link {
+  margin-top: 1em;
+  border-radius: 6px;
+  background-color: #f8f9fb;
+}
+
+.text-block-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 0px;
+  font-family: 'Sf pro display', sans-serif;
+  color: #ff4c00;
+  font-weight: 500;
+}
+
 @media screen and (max-width: 991px) {
   .grid {
     grid-auto-flow: row;
@@ -886,7 +918,11 @@ a {
     padding-right: 0px;
     padding-left: 0px;
   }
+  .column-2 {
+    margin-top: 2em;
+  }
   .container-2 {
+    margin-bottom: 0em;
     padding-right: 16px;
     padding-left: 16px;
   }
@@ -898,11 +934,6 @@ a {
     padding-right: 16px;
     padding-left: 16px;
   }
-  .div-block-13 {
-    position: -webkit-sticky;
-    position: sticky;
-    bottom: 16px;
-  }
   .div-block-17 {
     padding-right: 115px;
     padding-left: 115px;
@@ -913,6 +944,24 @@ a {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+  }
+  .form-for-answer {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 16px;
+    display: none;
+  }
+  .div-block-18-copy {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0px;
+    display: block;
+    margin-top: 0em;
+    padding: 6px 16px 24px;
+    background-color: hsla(0, 0%, 100%, 0.66);
+  }
+  .text-block-16 {
+    margin-bottom: 1em;
   }
 }
 
@@ -1015,6 +1064,17 @@ a {
   .image-7 {
     padding-right: 0px;
     padding-left: 0px;
+  }
+  .div-block-18-copy {
+    bottom: 0px;
+    padding: 6px 16px 24px;
+    background-color: hsla(0, 0%, 100%, 0.66);
+  }
+  .copy-link {
+    text-align: center;
+  }
+  .text-block-16 {
+    display: block;
   }
 }
 

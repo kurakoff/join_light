@@ -76,7 +76,7 @@
             <div class="div-block-4">
               <div class="price">
 
-                  {% if vacancie.salary == '' %}Не указано{% else %}{{vacancie.salary}} ₽{% endif %}
+                  {% if vacancie.salary == '' %}Не указано{% else %}{{ vacancie.salary|floatformat:0 }} ₽{% endif %}
 
                   </div>
             </div>
