@@ -46,9 +46,14 @@
 
 
 
-      <a id="Card" data-w-id="a4a95af4-a82d-934f-ee9e-417a79bc1356" href="{% url 'main:vacancy' vacancie.pk %}" class="card w-inline-block">
-       <div class="w-layout-grid grid"><img src="{{vacancie.img.url}}" loading="lazy" width="195" srcset="{{vacancie.img.url}} 500w, {{vacancie.img.url}} 800w, {{vacancie.img.url}} 1120w" sizes="(max-width: 479px) 74vw, 195px" id="w-node-417a79bc1358-2f7fc846" alt="" class="small-image-in-card">
-          <div>
+      <a id="Card"  href="{% url 'main:vacancy' vacancie.pk %}" class="card w-inline-block">
+         <div class="w-layout-grid grid">
+        <div id="w-node-bcc3bfe9e643-2f7fc846" class="div-block-17">
+
+            <img src="media/{{vacancie.img}}" loading="lazy" width="195" alt="" class="small-image-in-card" >
+            </div>
+
+            <div>
             <div class="date-time">{{ vacancie.published|naturalday:'F d' }}</div>
             <div class="title-main-div">
               <div class="title-main">{{vacancie.title}}<br></div>
