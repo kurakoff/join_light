@@ -59,9 +59,40 @@ $(function() {
   }
 
   // copy coupone code to clipboard
-  $(".coupon-btn").on("click", function() {
-    copyToClipboard("#coupon-field");
-    $(".coupon-alert").fadeIn("slow");
+  $("#push0").on("click", function() {
+    $("#push0").addClass("button-active");
+    $("#push1").removeClass("button-active");
+    $("#push2").removeClass("button-active");
+    $("#push3").removeClass("button-active");
+    $("#push4").removeClass("button-active");
+  });
+   $("#push1").on("click", function() {
+    $("#push0").removeClass("button-active");
+    $("#push1").addClass("button-active");
+    $("#push2").removeClass("button-active");
+    $("#push3").removeClass("button-active");
+    $("#push4").removeClass("button-active");
+  });
+   $("#push2").on("click", function() {
+    $("#push0").removeClass("button-active");
+    $("#push1").removeClass("button-active");
+    $("#push2").addClass("button-active");
+    $("#push3").removeClass("button-active");
+    $("#push4").removeClass("button-active");
+  });
+   $("#push3").on("click", function() {
+    $("#push0").removeClass("button-active");
+    $("#push1").removeClass("button-active");
+    $("#push2").removeClass("button-active");
+    $("#push3").addClass("button-active");
+    $("#push4").removeClass("button-active");
+  });
+    $("#push4").on("click", function() {
+    $("#push0").removeClass("button-active");
+    $("#push1").removeClass("button-active");
+    $("#push2").removeClass("button-active");
+    $("#push3").removeClass("button-active");
+    $("#push4").addClass("button-active");
   });
 });
 

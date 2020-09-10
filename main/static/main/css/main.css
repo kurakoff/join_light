@@ -6,3 +6,13 @@
     display: none;
     text-align: center;
 }
+#change .button {
+    border: 1px solid #646464!important;
+    color: #646464;
+}
+
+#change .button-active {
+    border: 1px solid #ff4c00!important;
+    color: #ff4c00;
+    border-radius: 20px;
+}

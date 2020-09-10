@@ -9,3 +9,4 @@ db.sqlite3
 /DATE
 /content/static/CACHE
 /main/migrations
+/join_light/settings.py
