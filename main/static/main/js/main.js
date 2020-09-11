@@ -58,6 +58,11 @@ $(function() {
     $temp.remove();
   }
 
+   $(".coupon-btn").on("click", function() {
+    copyToClipboard("#coupon-field");
+    $(".coupon-alert").fadeIn("slow");
+  });
+
   // copy coupone code to clipboard
   $("#push0").on("click", function() {
     $("#push0").addClass("button-active");
