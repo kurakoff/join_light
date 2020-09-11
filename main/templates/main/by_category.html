@@ -34,10 +34,10 @@
       <div class="container w-container">
     <div id="change" class="div-block-16">
 
-<a href="{% url 'main:index' %}" target="_blank" class="button w-button">Все</a>
+<a id="push0" href="{% url 'main:index' %}" target="_blank" class="button button-active w-button">Все</a>
            {% for category in categories %}
 
-<a href="{% url 'main:by_category' category.pk %}" class="button button-active w-button">{{category.name}}</a>
+<a id="push{{category.pk}}" href="{% url 'main:by_category' category.pk %}" class="button  w-button">{{category.name}}</a>
           {% endfor %}
       </div>
 
