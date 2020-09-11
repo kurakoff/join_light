@@ -5,6 +5,16 @@ from .models import Vacancie, Сategory, Subcategory
 from django.http import HttpResponse, Http404, BadHeaderError, HttpResponseRedirect
 from django.template import TemplateDoesNotExist
 from .forms import ContactForm
+from django.template.loader import get_template
+
+
+#Прочие страницы
+def other_page(request, page):
+    try:
+        template = get_template('main/' + page + '.html')
+    except TemplateDoesNotExist:
+        raise Http404
+    return HttpResponse(template.render(request=request))
 
 # Create your views here.
 def index(request):
