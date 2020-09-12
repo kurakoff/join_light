@@ -10,13 +10,12 @@ from .views import other_page
 
 app_name = 'main'
 urlpatterns = [
-    path('<str:page>/', other_page, name='other') ,
     path('<int:category_id>/', by_category, name="by_category"),
     path('vacancy/<int:vacancy_id>/', book_detail_view, name="vacancy"),
     path('', index, name='index'),
     path('contact/', views.contactform, name='contact'),
     path('contact/thanks/', views.thanks, name='thanks'),
-
+    path('<str:page>/', other_page, name='other') ,
     ]
 
 if settings.DEBUG:
