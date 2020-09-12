@@ -64,19 +64,19 @@
            <!-- <div class="div-block-7"><img src="{% static 'main/img/Line.svg'%}" loading="lazy" alt="" class="image-5"></div> -->
             <div class="parameters">
               <div class="div-block-for-location"><img src="{% static 'main/img/Geo.svg'%}" loading="lazy" width="30" alt="" class="image-in-card-small">
-                <div class="text-block-small-in-card">{% if vacancie.location == '' %}Не указано{% else %}{{vacancie.location }}{% endif %}</div>
+                <div class="text-block-small-in-card">{% if vacancie.location == '' or vacancie.location == None %}Не указано{% else %}{{vacancie.location }}{% endif %}</div>
               </div>
               <div class="div-block-5-copy"><img src="{% static 'main/img/Calendar.svg'%}" loading="lazy" width="30" alt="" class="image-in-card-small">
-                <div class="text-block-small-in-card">{% if vacancie.employment == '' %}Не указано{% else %}{{vacancie.employment }}{% endif %}</div>
+                <div class="text-block-small-in-card">{% if vacancie.employment == '' or vacancie.employment == None %}Не указано{% else %}{{vacancie.employment }}{% endif %}</div>
               </div>
               <div class="div-block-5-copy"><img src="{% static 'main/img/Level.svg'%}" loading="lazy" width="30" alt="" class="image-in-card-small">
-                <div class="text-block-small-in-card">{% if vacancie.skill == '' %}Не указано{% else %}{{vacancie.skill}}{% endif %}</div>
+                <div class="text-block-small-in-card">{% if vacancie.skill == '' or vacancie.skill == None %}Не указано{% else %}{{vacancie.skill}}{% endif %}</div>
               </div>
             </div>
             <div class="div-block-4">
               <div class="price">
 
-                  {% if vacancie.salary == '' %}Не указано{% else %}{{ vacancie.salary|floatformat:0 }} ₽{% endif %}
+                  {% if vacancie.salary == '' or vacancie.salary == None %}Не указано{% else %}{{ vacancie.salary|floatformat:0 }} ₽{% endif %}
 
                   </div>
             </div>
