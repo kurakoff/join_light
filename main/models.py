@@ -62,7 +62,7 @@ class Vacancie(models.Model):
     category = models.ForeignKey('Сategory', null=True, on_delete=models.PROTECT, verbose_name='Сategory')
     subcategores = models.ManyToManyField('Subcategory', verbose_name='Subcategory')
     employment = models.ForeignKey('Employment_type', null=True, on_delete=models.PROTECT, verbose_name='Employmet type')
-    skill = models.ForeignKey('Skill', null=True, on_delete=models.PROTECT,
+    skill = models.ForeignKey('Skill', null=True, blank=True, on_delete=models.PROTECT,
                                    verbose_name='Skill')
     img = models.ImageField(upload_to='img', null=True, blank=True, verbose_name='Vacancy_img'
                             )
