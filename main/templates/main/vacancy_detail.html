@@ -60,7 +60,7 @@
           </div>
           <div class="div-block-for-description">
             <div class="title-big-in-description">Описание</div>
-            <div class="description-text">{{vacancy.description}}</div>
+            <div class="description-text">{{vacancy.description|safe}}</div>
           </div>
 
         {% if vacancy.requirements == '' or  vacancy.requirements == None %}
@@ -71,7 +71,7 @@
 
 
             <div class="title-big-in-description">Требования</div>
-            <div class="description-text">{{vacancy.requirements}}</div>
+            <div class="description-text">{{vacancy.requirements|safe}}</div>
           </div>
         {% endif %}
 {% if vacancy.tasks == '' or  vacancy.tasks == None  %}
@@ -79,7 +79,7 @@
 
           <div class="div-block-for-description">
             <div class="title-big-in-description">Задачи</div>
-            <div class="description-text">{{vacancy.tasks}}</div>
+            <div class="description-text">{{vacancy.tasks|safe}}</div>
           </div>
 
         {% endif %}
@@ -88,7 +88,7 @@
 
           <div class="div-block-for-description">
             <div class="title-big-in-description">Условия</div>
-            <div class="description-text">{{vacancy.terms}}</div>
+            <div class="description-text">{{vacancy.terms|safe}}</div>
           </div>
 {% endif %}
 
