@@ -21,8 +21,8 @@
         <h1 class="heading-for-card">{{vacancy.title}}</h1>
       </div>
       <div class="div-block-14">
-        <div class="price">{{ vacancy.salary|floatformat:0 }} ₽</div>
-        <div class="text-block-4">{% if vacancy.salary == '' or vacancy.salary == None %}Не указано{% else %}{{ vacancy.salary|floatformat:0 }} ₽{% endif %}</div>
+        <div class="price">{% if vacancy.salary == '' or vacancy.salary == None %}Не указано{% else %}{{ vacany.salary|floatformat:0 }} ₽{% endif %}</div>
+        <div class="text-block-4">{{ vacancy.published|naturalday:'F d' }}</div>
       </div>
     </div>
   </div>
