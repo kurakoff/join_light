@@ -22,7 +22,7 @@
       </div>
       <div class="div-block-14">
         <div class="price">{{ vacancy.salary|floatformat:0 }} ₽</div>
-        <div class="text-block-4">{{ vacancy.published|naturalday:'F d' }}</div>
+        <div class="text-block-4">{% if vacancy.salary == '' or vacancy.salary == None %}Не указано{% else %}{{ vacancy.salary|floatformat:0 }} ₽{% endif %}</div>
       </div>
     </div>
   </div>
