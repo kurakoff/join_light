@@ -1,0 +1,10 @@
+{% extends "layout/basic_registration.html" %}
+{% load bootstrap4 %}
+{% block title %}delete user{% endblock %}
+{% block content %}
+<h2>Delete user</h2>
+<form method="post">
+{%csrf_token %}
+{% buttons submit="Delate" %} {% endbuttons %}
+</form>
+{% endblock %}

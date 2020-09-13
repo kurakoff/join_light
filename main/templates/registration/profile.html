@@ -1,0 +1,20 @@
+{% extends "layout/basic_registration.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<h2>Profile of {{ user.username }} </h2>
+{% if user.first_name and user.last_name %}
+<p> Hi, {{ user.first_name }} {{ user.last_name}}!</p> {% else %}
+<p>Hi!</p>
+{% endif %}
+
+<a href="{% url 'main:logout' %}" class="nav-link-2 w-nav-link">LogOut</a>
+<a href="{% url 'main:profile_change' %}" class="nav-link-2 w-nav-link">Settings</a>
+
+<a href="{% url 'main:password_change' %}" class="nav-link-2 w-nav-link">Change password</a>
+
+<a href="{% url 'main:profile_delete' %}" class="nav-link-2 w-nav-link">Delate profile</a>
+
+
+<hЗ>Your vacancies</hЗ>
+
+{% endblock %}

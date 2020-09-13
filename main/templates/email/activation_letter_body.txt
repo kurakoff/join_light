@@ -1,0 +1,7 @@
+Aloha, {{ user.username }}!
+
+Welcome to JOIN job site!
+To confirm registration, follow the link:
+{{ host }}{% url 'main:register_activate' sign=sign %}
+
+Thanks!
