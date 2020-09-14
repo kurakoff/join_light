@@ -132,6 +132,19 @@ EMAIL_USE_TLS = False
 DEFAULT_FROM_EMAIL = "sizze.team@gmail.com"
 
 
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOpenId',
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.google.GoogleOAuth',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+
+
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '279964693054-ehqnu8op18r3dlp0d0c7ghs8to447i9i.apps.googleusercontent.com' # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'MC__AUhf0EU6Upbb4jDa1qW4' # Google Consumer Secret
+SOCIAL_AUTH_VК_OAUTH2_SCOPE = ['email']
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
