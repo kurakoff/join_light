@@ -89,7 +89,7 @@ class Vacancie(models.Model):
                                    verbose_name='Skill')
     img = models.ImageField(upload_to='img', null=True, blank=True, verbose_name='Vacancy_img'
                             )
-    email = models.EmailField(max_length=50, verbose_name='Email')
+    email = models.EmailField(max_length=50, null=True, blank=True, verbose_name='Email')
     location = models.TextField(null=True, blank=True, verbose_name='Location')
     salary = models.FloatField(null=True, blank=True)
     company = models.CharField(max_length=70, null=True, blank=True,verbose_name='Company')
