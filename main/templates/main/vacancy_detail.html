@@ -127,7 +127,7 @@
 
           <div class="form-for-answer">
             <div class="div-block-8">
-              <div id="coupon-field" class="link-form"> {% if vacancy.telegram == '' or vacancy.telegram == None %}Не указано
+              <div id="coupon-field" class="link-form"> {% if vacancy.url == '' or vacancy.url == None %}Не указано
           {% else %}{{vacancy.url}}{% endif %}</div><a class="coupon-btn link-block-2 w-inline-block"><img src="{% static 'main/img/Link-button.svg'%}" loading="lazy" data-w-id="7f2ad353-01f2-6607-6fb0-5573c4efc68d" alt="" class="link-button-in-card"></a></div>
             <div class="div-block-13"><a data-w-id="9bf2dde9-6162-3316-689e-4c161c15d4e4" href="{{vacancy.url}}" class="submit-button w-button">Ответить</a></div>
               <div class="copy-link">
