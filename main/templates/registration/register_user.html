@@ -1,11 +1,39 @@
-{% extends "layout/basic_registration.html" %}
+{% extends "layout/basic.html" %}
 {% load bootstrap4 %}
+{% load static %}
 {% block title %}Registration{% endblock %}
 {% block content %}
-<h2>Register new user</h2>
-<form method="post">
-{%csrf_token %}
-{% bootstrap_form form layout='horizontal' %}
-{% buttons submit="Redister" %} {% endbuttons %}
-</form>
+
+
+  <div>
+    <div class="w-container">
+      <div class="form-block w-form">
+        <form  action="{% url "main:register" %}" method="post" >
+            {%csrf_token %}
+          <h1 class="heading-2">Регистрация</h1>
+          <div>Уже есть аккаунт? <a href="{% url "main:login" %}" class="link-2">Войти</a></div>
+            <label for="name-3" class="field-label">Имя</label>
+            <input type="text" class="text-field w-input" maxlength="256" name="username" data-name="username" placeholder="Введите логин" id="username">
+            <label for="name" class="field-label">Email</label><input type="email" class="text-field w-input" maxlength="256" name="email" data-name="email" placeholder="Введите адрес элекстронной почты" id="name-2">
+            <label for="email" class="field-label">Пароль</label>
+            <input type="password" class="text-field w-input" maxlength="256" name="password1" data-name="password1" placeholder="Введите пароль" id="password1" required=""><label for="email-3" class="field-label">Повторить пароль</label>
+            <input type="password" class="text-field w-input" maxlength="256" name="password2" data-name="password2" placeholder="Введите пароль" id="password2" required=""><label for="email-3" class="field-label">Имя</label>
+            <input type="text" class="text-field w-input" maxlength="256" name="first_name" data-name="first_name" placeholder="Введите имя" id="first_name" required=""><label for="email-3" class="field-label">Фамилия</label>
+            <input type="text" class="text-field w-input" maxlength="256" name="last_name" data-name="last_name" placeholder="Введите фамилию" id="last_name" required=""><label class="w-checkbox checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox"></div>
+            <input type="checkbox" id="send_messages" name="send_messages"  style="opacity:0;position:absolute;z-index:-1"><span class="checkbox-label w-form-label">Отправлять уведомления</span></label>
+          <div class="div-block-12">
+
+
+              <input submit="Redister" type="submit" value="Зарегестрироваться" data-wait="Please wait..." data-w-id="217eef70-cffa-58f1-8237-b14dbf832070" class="submit-button-for-send w-button"></div>
+          <div class="div-block-25"></div>
+            {% bootstrap_form_errors form %}
+          <a data-w-id="217eef70-cffa-58f1-8237-b14dbf832072" href="{% url "social:begin" "google-oauth2" %}" class="div-block-26 w-inline-block">
+            <div class="div-block-27"><img src="{% static 'main/img/Google_Logo.svg'%}" loading="lazy" width="35" alt="" class="image-11">
+              <div class="text-block-21">Зарегестрироваться с Google</div>
+            </div>
+          </a>
+        </form>
+      </div>
+    </div>
+  </div>
 {% endblock %}

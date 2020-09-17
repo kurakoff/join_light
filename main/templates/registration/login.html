@@ -1,23 +1,35 @@
-{% extends "layout/basic_registration.html" %}
+{% extends "layout/basic.html" %}
 {% load bootstrap4 %}
+{% load static %}
 {%block title %}Login{% endblock  %}
 {%block content %}
+    {% bootstrap_javascript jquery='slim' %}
 
 
-<h2>Login</h2 >
 {% if user.is_authenticated %} <p>You have already login</p>
 <a href="{% url 'main:profile' %}" class="nav-link-2 w-nav-link">Profile</a>
 {% else %}
-<form method="post">
-{% csrf_token %}
-{% bootstrap_form form layout='horizontal' %}
-<input type="hidden" name="next" value="{{ next }}">
-{% buttons submit='login' %}
-{% endbuttons %}
+  <div>
+    <div class="w-container">
+      <div class="form-block w-form">
+        <form action="{% url "main:login" %}" id="email-form" name="email-form" data-name="Email Form" method="post">
+            {% csrf_token %}
+          <h1 class="heading-2">Вход</h1>
+          <div>Еще нет аккаунта? <a href="{% url "main:register" %}" class="link-2">Зарегестрироваться</a></div><label for="name" class="field-label">Логин</label><input type="text" class="text-field w-input" maxlength="256" name="username" data-name="Name" placeholder="Введите логин" id="name"><label for="email" class="field-label">Пароль</label><input type="password" class="text-field w-input" maxlength="256" name="password" data-name="Email 2" placeholder="Введите пароль" id="email-2" required=""><a href="{% url "main:password_reset" %}" class="link">Забыли пароль?</a>
+          <div class="div-block-12"><input type="submit" value="Войти" data-w-id="e3965f0c-51a1-21ca-5187-a266b5bb3372" class="submit-button-for-send w-button"></div>
+          <div class="div-block-25"></div>
 
-</form>
-      <a href="{% url "social:begin" "google-oauth2" %}">Login with Google</a>
-     <a href="{% url "main:password_reset" %}">forgot</a>
+    {% bootstrap_form_errors form %}
+          <a data-w-id="f9186da9-2382-897c-f09d-932b0bca95f5" href="{% url "social:begin" "google-oauth2" %}" class="div-block-26 w-inline-block">
+            <div class="div-block-27"><img src="{% static 'main/img/Google_Logo.svg'%}" loading="lazy" width="35" alt="" class="image-11">
+              <div class="text-block-21">Войти с Google</div>
+            </div>
+          </a>
+        </form>
+      </div>
+    </div>
+  </div>
+
 
 {%endif %}
 {% endblock %}

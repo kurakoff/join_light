@@ -21,8 +21,12 @@
 
   <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navbar w-nav">
     <div class="w-container"><a href="{% url 'main:index' %}" aria-current="page" class="w-nav-brand w--current"><img src="{% static 'main/img/Logo-Join.svg'%}" loading="lazy" alt="" class="image-6"></a>
-      <nav role="navigation" class="nav-menu w-nav-menu"><a href="{% url 'main:contact' %}" data-w-id="dbeecab7-b2d3-20bf-a356-f96fd39b535d" class="nav-link w-nav-link">Опубликовать вакансию</a><a href="{% url 'main:index' %}" data-w-id="dbeecab7-b2d3-20bf-a356-f96fd39b535f" aria-current="page" class="nav-link-2 w-nav-link w--current">Вакансии</a></nav>
-      <div class="menu-button w-nav-button">
+      {% if user.is_authenticated %}
+          <nav role="navigation" class="nav-menu w-nav-menu"><a href="{% url 'main:contact' %}" data-w-id="dbeecab7-b2d3-20bf-a356-f96fd39b535d" class="nav-link w-nav-link">Опубликовать вакансию</a><a href="{% url 'main:index' %}" data-w-id="dbeecab7-b2d3-20bf-a356-f96fd39b535f" aria-current="page" class="nav-link-2 w-nav-link w--current">Вакансии</a><a href="{% url 'main:profile' %}" data-w-id="dbeecab7-b2d3-20bf-a356-f96fd39b535f" aria-current="page" class="nav-link-2 w-nav-link w--current">Профиль</a><a href="{% url 'main:logout' %}" data-w-id="dbeecab7-b2d3-20bf-a356-f96fd39b535f" aria-current="page" class="nav-link-2 w-nav-link w--current">Выход</a></nav>
+        {% else %}
+        <nav role="navigation" class="nav-menu w-nav-menu"><a href="{% url 'main:contact' %}" data-w-id="dbeecab7-b2d3-20bf-a356-f96fd39b535d" class="nav-link w-nav-link">Опубликовать вакансию</a><a href="{% url 'main:index' %}" data-w-id="dbeecab7-b2d3-20bf-a356-f96fd39b535f" aria-current="page" class="nav-link-2 w-nav-link w--current">Вакансии</a><a href="{% url 'main:register' %}" data-w-id="dbeecab7-b2d3-20bf-a356-f96fd39b535f" aria-current="page" class="nav-link-2 w-nav-link w--current">Регистрация</a><a href="{% url 'main:login' %}" data-w-id="dbeecab7-b2d3-20bf-a356-f96fd39b535f" aria-current="page" class="nav-link-2 w-nav-link w--current">Вход</a></nav>
+      {% endif %}
+        <div class="menu-button w-nav-button">
         <div class="icon w-icon-nav-menu"></div>
       </div>
     </div>
