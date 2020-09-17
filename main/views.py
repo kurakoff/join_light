@@ -117,7 +117,8 @@ def profile(request):
 
 #Профиль выход
 class JobLogoutView(LoginRequiredMixin, LogoutView):
-    template_name = 'registration/logout.html'
+   # template_name = 'registration/logout.html'
+   success_url = reverse_lazy('main:index')
 
 #Редактирование профиля
 class ChangeUserInfoView(SuccessMessageMixin, LoginRequiredMixin, UpdateView) :
