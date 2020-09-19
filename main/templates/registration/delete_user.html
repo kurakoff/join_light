@@ -1,10 +1,25 @@
 {% extends "layout/basic.html" %}
 {% load bootstrap4 %}
-{% block title %}delete user{% endblock %}
+{% block title %}Delete user{% endblock %}
 {% block content %}
-<h2>Delete user</h2>
-<form method="post">
-{%csrf_token %}
-{% buttons submit="Delate" %} {% endbuttons %}
-</form>
+
+
+
+
+
+
+  <div>
+    <div class="w-container">
+      <div class="form-block w-form">
+        <form action="{% url 'main:profile_delete' %}" method="post">
+            {%csrf_token %}
+          <h1 class="heading-2">Удалить аккаунт</h1>
+          <div>Вы уверены что хотите удалить аккаунт безвозвратно?</div>
+          <div class="div-block-12">
+              <input type="submit"  value="Подтвердить"  class="submit-button-for-send w-button"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
 {% endblock %}

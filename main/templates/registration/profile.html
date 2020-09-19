@@ -1,9 +1,25 @@
 {% extends "layout/basic.html" %}
-{% block title %}Profile{% endblock %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_javascript jquery='slim' %}
+{% block title %}Профиль{% endblock %}
 {% block content %}
 
 
 
+  <div>
+    <div class="w-container">
+      <div id="change_profile" class="div-block-button-settings"><a id="push_profile_1" href="{% url "main:profile" %}" target="_blank" class="button-settings-active button-settings-none w-button">Профиль</a><a id="push_profile_2" href="{% url "main:profile_change" %}" class="button-settings-none w-button">Настройки аккаунта</a><a id="push_profile_3" href="{% url "main:password_change" %}" class="button-settings-none w-button">Изменить пароль</a></div>
+<div id="content_profile">
+        <div class="div-block-28-tab"><img src="{% static 'main/img/None-Photo.png'%}" loading="lazy" srcset="{% static 'main/img/None-Photo.png'%} 500w, {% static 'main/img/None-Photo.png'%} 604w" sizes="160px" alt="" class="image-12">
+        <div class="div-block-29">
+          <h1 class="name-user">{% if user.first_name and user.last_name %}{{ user.first_name }} {{ user.last_name}}{% else %}{% endif %}</h1>
+          <div class="text-block-23-copy">Специализация в разработке</div>
+          <div class="text-block-23">@{{ user.username }}</div><a href="#" class="edif-profile w-button">Редактировать профиль</a></div>
+      </div>
+</div>
+    </div>
+  </div>
 
 
 
@@ -15,19 +31,91 @@
 
 
 
-<h2>Profile of {{ user.username }} </h2>
-{% if user.first_name and user.last_name %}
-<p> Hi, {{ user.first_name }} {{ user.last_name}}!</p> {% else %}
-<p>Hi!</p>
-{% endif %}
 
 
-<a href="{% url 'main:logout' %}" class="nav-link-2 w-nav-link">LogOut</a>
-<a href="{% url 'main:profile_change' %}" class="nav-link-2 w-nav-link">Settings</a>
 
-<a href="{% url 'main:password_change' %}" class="nav-link-2 w-nav-link">Change password</a>
+    <!--
 
-<a href="{% url 'main:profile_delete' %}" class="nav-link-2 w-nav-link">Delate profile</a>
+<div>
+    <div class="w-container">
+      <div data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+        <div class="tabs-menu w-tab-menu">
+          <a data-w-tab="Tab 1" class="tab-link w-inline-block w-tab-link w--current">
+            <div class="text-block-tabs">Профиль</div>
+          </a>
+          <a data-w-tab="Tab 2" class="tab-link w-inline-block w-tab-link">
+            <div class="text-block-tabs">Настройки аккаунта</div>
+          </a>
+          <a data-w-tab="Tab 3" class="tab-link w-inline-block w-tab-link">
+            <div class="text-block-tabs">Изменить пароль</div>
+          </a>
+        </div>
+        <div class="tabs-content w-tab-content">
+          <div data-w-tab="Tab 1" class="tab-pane-tab-1 w-tab-pane w--tab-active">
+            <div class="div-block-28-tab"><img src="{% static 'main/img/None-Photo.png'%}" loading="lazy" srcset="{% static 'main/img/None-Photo.png'%} 500w, {% static 'main/img/None-Photo.png'%}" sizes="160px" alt="" class="image-12">
+              <div class="div-block-29">
+                <h1 class="name-user">{% if user.first_name and user.last_name %}{{ user.first_name }} {{ user.last_name}}{% else %}{% endif %}</h1>
+                <div class="text-block-23-copy">Специализация в рзработке</div>
+                <div class="text-block-23">@{{ user.username }}</div><a href="#" class="edif-profile w-button">Редактировать профиль</a></div>
+            </div>
+             <div class="w-row">
+            </div>
+          </div>
+          <div data-w-tab="Tab 2" class="w-tab-pane">
+            <div class="form-block w-form">
+              <form action="{% url "main:profile_change" %}" method="post" id="friend_form">
+                  {% csrf_token %}
+                <h1 class="heading-2">Настройки аккаунта</h1><label for="name-3" class="field-label">Логин</label>
+                  <input type="text" class="text-field w-input" maxlength="256" name="username" data-name="username" placeholder="Введите логин" id="username">
+                  <label for="name" class="field-label">Email</label>
+                  <input type="email" class="text-field w-input" maxlength="256" name="email" data-name="email" placeholder="Введите имя" id="email">
+                  <label for="email-3" class="field-label">Имя</label>
+                  <input type="text" class="text-field w-input" maxlength="256" name="first_name" data-name="first_name" placeholder="Введите имя" id="first_name" required="">
+                  <label for="email-3" class="field-label">Фамилия</label>
+                  <input type="text" class="text-field w-input" maxlength="256" name="last_name" data-name="last_name" placeholder="Введите фамилию" id="last_name" required="">
+                  <label class="w-checkbox checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox"></div>
+                      <input type="checkbox" id="send_messages" name="send_messages" data-name="send_messages" style="opacity:0;position:absolute;z-index:-1"><span class="checkbox-label w-form-label">Отправлять уведомления</span></label>
+                  <a href="{% url "main:profile_delete" %}" class="link-3">Удалить аккаунт</a>
+
+
+
+                <div class="div-block-12">
+                    <input type="submit" value="Сохранить" data-wait="Please wait..." data-w-id="217eef70-cffa-58f1-8237-b14dbf832070" class="submit-button-for-send w-button"></div>
+              </form>
+            </div>
+          </div>
+          <div data-w-tab="Tab 3" class="w-tab-pane">
+            <div class="form-block w-form">
+              <form action="{% url "main:password_change" %}" method="post" id="friend_form">
+                  {% csrf_token %}
+                <h1 class="heading-2">Сменить пароль</h1>
+                <div>Введите свой новый пароль для Вашей учетной записи</div>
+                  <label for="name-3" class="field-label">Старый пароль</label>
+                  <input type="password" maxlength="256" name="old_password" data-name="password" placeholder="Введите старый пароль" id="password" class="text-field w-input">
+                  <label for="name-4" class="field-label">Новый пароль</label>
+                  <input type="password" maxlength="256" name="password1" data-name="new_password1" placeholder="Введите новый пароль" id="password1" class="text-field w-input">
+                  <label for="name-4" class="field-label">Подтвердить пароль</label>
+                  <input type="password" maxlength="256" name="name-3" data-name="new_password2" placeholder="Введите подтверждение пароля" id="password2" class="text-field w-input">
+                <div class="div-block-12"><input type="submit" value="Подтвердить" data-wait="Please wait..." data-w-id="aeb1d348-2b16-b5a1-68b0-8f0d0daf8a5d" class="submit-button-for-send w-button"></div>
+              </form>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>-->
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -117,7 +117,7 @@ def profile(request):
 
 #Профиль выход
 class JobLogoutView(LoginRequiredMixin, LogoutView):
-   # template_name = 'registration/logout.html'
+  # template_name = 'registration/logout.html'
    success_url = 'main:index'
 
 #Редактирование профиля

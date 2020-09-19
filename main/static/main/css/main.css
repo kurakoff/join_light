@@ -16,3 +16,7 @@
     color: #ff4c00;
     border-radius: 20px;
 }
+
+.button-settings-active {
+    color: #ff4c00!important;
+}
