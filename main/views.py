@@ -117,15 +117,16 @@ def profile(request):
 
 #Профиль выход
 class JobLogoutView(LoginRequiredMixin, LogoutView):
+    next_page = 'main:index'
   # template_name = 'registration/logout.html'
-   success_url = 'main:index'
+   #success_url = 'main:index'
 
 #Редактирование профиля
 class ChangeUserInfoView(SuccessMessageMixin, LoginRequiredMixin, UpdateView) :
     model = AdvUser
     template_name = 'registration/change_user_info.html'
     form_class = ChangeUserInfoForm
-    success_url = reverse_lazy('main:profile')
+    success_url = reverse_lazy('main:profile_change')
     success_message = "Changed"
 
     def dispatch(self, request, *args, **kwargs):
@@ -139,7 +140,7 @@ class ChangeUserInfoView(SuccessMessageMixin, LoginRequiredMixin, UpdateView) :
 #Смена пароля
 class JobPasswordChangeView(SuccessMessageMixin, LoginRequiredMixin, PasswordChangeView):
     template_name = 'registration/password_changed.html'
-    success_url = reverse_lazy('main:profile')
+    success_url = reverse_lazy('main:password_change')
     success_message = 'password changed'
 
 #Регистрация

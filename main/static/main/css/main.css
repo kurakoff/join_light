@@ -20,3 +20,7 @@
 .button-settings-active {
     color: #ff4c00!important;
 }
+
+.my_form {
+    display: block;
+}

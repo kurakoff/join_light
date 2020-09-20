@@ -159,6 +159,7 @@ $(function() {
            });
            // if failure:
            posting.fail(function(data) {
+               $("#u").addClass("my_form");
                // 4xx or 5xx response, alert user about failure
            });
        });

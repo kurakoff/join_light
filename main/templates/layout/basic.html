@@ -33,9 +33,9 @@
 
 
             {% if user.is_authenticated %}
-          <nav class="dropdown-list w-dropdown-list"><a href="{% url 'main:profile' %}" data-w-id="bdf4dbaa-eea3-2f90-9a02-c16597f23f0e" target="_blank" class="dropdown-link-2 w-dropdown-link">Настройки</a><a href="{% url 'main:logout' %}" data-w-id="1005a791-d5a5-57df-b903-a5e6a361cab6" class="dropdown-link-3 w-dropdown-link">Выход</a></nav>
+          <nav class="dropdown-list w-dropdown-list"><a href="{% url 'main:profile' %}" data-w-id="bdf4dbaa-eea3-2f90-9a02-c16597f23f0e" target="_self" class="dropdown-link-2 w-dropdown-link">Настройки</a><a href="{% url 'main:logout' %}" data-w-id="1005a791-d5a5-57df-b903-a5e6a361cab6" class="dropdown-link-3 w-dropdown-link">Выход</a></nav>
         {% else %}
-             <nav class="dropdown-list w-dropdown-list"><a href="{% url 'main:register' %}" data-w-id="bdf4dbaa-eea3-2f90-9a02-c16597f23f0e" target="_blank" class="dropdown-link-2 w-dropdown-link">Регистрация</a><a href="{% url 'main:login' %}" data-w-id="1005a791-d5a5-57df-b903-a5e6a361cab6" class="dropdown-link-3 w-dropdown-link">Вход</a></nav>
+             <nav class="dropdown-list w-dropdown-list"><a href="{% url 'main:register' %}" data-w-id="bdf4dbaa-eea3-2f90-9a02-c16597f23f0e" target="_self" class="dropdown-link-2 w-dropdown-link">Регистрация</a><a href="{% url 'main:login' %}" data-w-id="1005a791-d5a5-57df-b903-a5e6a361cab6" class="dropdown-link-3 w-dropdown-link">Вход</a></nav>
         {% endif %}
 
         </div><a href="{% url 'main:contact' %}" data-w-id="4179b71b-25fb-81df-1cdf-aaba414892b2" class="nav-link w-nav-link">Опубликовать вакансию</a><a href="{% url 'main:index' %}" data-w-id="dbeecab7-b2d3-20bf-a356-f96fd39b535f" class="nav-link-2 w-nav-link">Вакансии</a></nav>
