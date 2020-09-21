@@ -4,15 +4,11 @@
 {% block content %}
 
 
-     <div class="success-message w-form-done">
-          <div class="text-block-15">Спасибо! Ваша заявка успешно отправлена!</div>
-         <a data-w-id="217eef70-cffa-58f1-8237-b14dbf83207a" href="{% url 'main:index' %}" class="submit-button-copy w-button">Вернуться на главную</a></div>
-
-
-
-
-
-<h2>Registration new user</h2>
-    <p>Registration compleat</p>
-    <p>Massege was send by e-mail</p>
+  <div>
+    <div class="w-container">
+      <div class="div-block-successful-registration">
+        <h1>Письмо для активации аккаунта отправлено на Ваш e-mail</h1>
+       <a href="{% url "main:index" %}" class="submit-button w-button">Главная</a></div>
+    </div>
+  </div>
 {% endblock %}

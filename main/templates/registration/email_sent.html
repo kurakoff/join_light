@@ -2,6 +2,12 @@
 {% load bootstrap4 %}
 {% block title %}Email send{% endblock %}
 {% block content %}
-<h2>Email was send</h2>
 
+  <div>
+    <div class="w-container">
+      <div class="div-block-successful-registration">
+        <h1>Письмо отправлено!</h1>
+        <div>Ссылка для сброса пароля отправлена на Ваш e-mail</div><a href="{% url "main:index" %}" class="submit-button w-button">Главная</a></div>
+    </div>
+  </div>
 {% endblock %}
