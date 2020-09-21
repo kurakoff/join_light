@@ -14,7 +14,7 @@
           <h1 class="heading-2">Регистрация</h1>
           <div>Уже есть аккаунт? <a href="{% url "main:login" %}" class="link-2">Войти</a></div>
 
-            <label for="name-3" class="field-label">Имя</label>
+            <label for="name-3" class="field-label">Логин</label>
             <input type="text" class="text-field w-input" maxlength="256" name="username" data-name="username" placeholder="Введите логин" id="username">
            <div id="u" class="text-block-27" style="padding: 0px;margin-top: 1em;">  {{ form.username.errors }}</div>
             <label for="name" class="field-label">Email</label><input type="email" class="text-field w-input" maxlength="256" name="email" data-name="email" placeholder="Введите адрес элекстронной почты" id="name-2">
