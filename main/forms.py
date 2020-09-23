@@ -1,7 +1,7 @@
 from django import forms
 
 ##
-
+from . import models
 from .models import AdvUser
 
 
@@ -9,6 +9,11 @@ from django.contrib.auth import password_validation
 from django.core.exceptions import ValidationError
 
 from .models import user_registrated
+
+
+
+
+
 
 # Модель формы обратной связи
 class ContactForm(forms.Form):

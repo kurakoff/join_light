@@ -22,23 +22,24 @@
 
 
 
-  <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navbar w-nav">
-    <div class="w-container"><a href="{% url 'main:index' %}" class="w-nav-brand"><img src="{% static 'main/img/Logo-Join.svg'%}" loading="lazy" alt="" class="image-6"></a>
+    <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navbar w-nav">
+    <div class="w-container"><a href="index.html" aria-current="page" class="w-nav-brand w--current"><img src="images/Logo-Join.svg" loading="lazy" alt="" class="image-6"></a>
       <nav role="navigation" class="nav-menu w-nav-menu">
         <div data-hover="" data-delay="0" class="w-dropdown">
-          <div data-w-id="bdf4dbaa-eea3-2f90-9a02-c16597f23f07" class="w-dropdown-toggle">
+          <div data-w-id="37052b69-43e1-8b4c-9cdf-bb833def04d7" class="dropdown-toggle w-dropdown-toggle">
             <div class="w-icon-dropdown-toggle"></div>
-            <div class="text-block-25">Личный кабинет</div>
+            <div>Личный кабинет</div>
           </div>
 
 
             {% if user.is_authenticated %}
-          <nav class="dropdown-list w-dropdown-list"><a href="{% url 'main:profile' %}" data-w-id="bdf4dbaa-eea3-2f90-9a02-c16597f23f0e" target="_self" class="dropdown-link-2 w-dropdown-link">Настройки</a><a href="{% url 'main:logout' %}" data-w-id="1005a791-d5a5-57df-b903-a5e6a361cab6" class="dropdown-link-3 w-dropdown-link">Выход</a></nav>
+
+         <nav class="dropdown-list w-dropdown-list"><a href="{% url 'main:profile' %}" data-w-id="bdf4dbaa-eea3-2f90-9a02-c16597f23f0e" target="_self" class="dropdown-link-2 w-dropdown-link">Настройки</a><a href="{% url 'main:logout' %}" data-w-id="1005a791-d5a5-57df-b903-a5e6a361cab6" class="dropdown-link-3 w-dropdown-link">Выход</a></nav>
         {% else %}
-             <nav class="dropdown-list w-dropdown-list"><a href="{% url 'main:register' %}" data-w-id="bdf4dbaa-eea3-2f90-9a02-c16597f23f0e" target="_self" class="dropdown-link-2 w-dropdown-link">Регистрация</a><a href="{% url 'main:login' %}" data-w-id="1005a791-d5a5-57df-b903-a5e6a361cab6" class="dropdown-link-3 w-dropdown-link">Вход</a></nav>
+                <nav class="dropdown-list w-dropdown-list"><a href="{% url 'main:register' %}" data-w-id="bdf4dbaa-eea3-2f90-9a02-c16597f23f0e" target="_self" class="dropdown-link-2 w-dropdown-link">Регистрация</a><a href="{% url 'main:login' %}" data-w-id="1005a791-d5a5-57df-b903-a5e6a361cab6" class="dropdown-link-3 w-dropdown-link">Вход</a></nav>
         {% endif %}
 
-        </div><a href="{% url 'main:contact' %}" data-w-id="4179b71b-25fb-81df-1cdf-aaba414892b2" class="nav-link w-nav-link">Опубликовать вакансию</a><a href="{% url 'main:index' %}" data-w-id="dbeecab7-b2d3-20bf-a356-f96fd39b535f" class="nav-link-2 w-nav-link">Вакансии</a></nav>
+        </div><a href="{% url 'main:contact' %}" data-w-id="dbeecab7-b2d3-20bf-a356-f96fd39b535f" class="nav-link-2 w-nav-link"">Опубликовать вакансию</a><a href="{% url 'main:index' %}" data-w-id="dbeecab7-b2d3-20bf-a356-f96fd39b535f" class="nav-link-2 w-nav-link">Вакансии</a></nav>
       <div class="menu-button w-nav-button">
         <div class="icon w-icon-nav-menu"></div>
       </div>

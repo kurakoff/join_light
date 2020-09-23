@@ -24,3 +24,8 @@
 .my_form {
     display: block;
 }
+
+
+.w-dropdown-link.w--current {
+    color: #222222!important;
+}

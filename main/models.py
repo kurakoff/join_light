@@ -12,7 +12,6 @@ class AdvUser(AbstractUser):
     verbose_name='Is active?')
     send_messages = models.BooleanField(default=True,
     verbose_name='Send alerts?')
-
     class Meta(AbstractUser.Meta):
         pass
 

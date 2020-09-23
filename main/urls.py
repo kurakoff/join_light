@@ -26,6 +26,7 @@ from django.contrib.auth.views import PasswordResetDoneView
 from django.contrib.auth.views import PasswordResetConfirmView
 from django.contrib.auth.views import PasswordResetCompleteView
 
+
 app_name = 'main'
 urlpatterns = [
     path('<int:category_id>/', by_category, name="by_category"),

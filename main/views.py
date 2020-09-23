@@ -1,11 +1,17 @@
 from django.contrib import auth
 from django.core.mail import send_mail
 from django.shortcuts import render
+
+from . import forms
 from .models import Vacancie, Сategory, Subcategory
-from django.http import HttpResponse, Http404, BadHeaderError, HttpResponseRedirect
+from django.http import HttpResponse, Http404, BadHeaderError, HttpResponseRedirect, request
 from django.template import TemplateDoesNotExist
 from .forms import ContactForm
 from django.template.loader import get_template
+
+
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
 
 ####
 from django.contrib.auth.views import LoginView
@@ -13,7 +19,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, FormView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
@@ -36,6 +42,14 @@ from .utilities import signer
 from django.views.generic.edit import DeleteView
 from django.contrib.auth import logout
 from django.contrib import messages
+
+from django.contrib.auth import get_user_model
+from django.contrib.auth.backends import ModelBackend
+
+
+
+
+
 #Прочие страницы
 def other_page(request, page):
     try:
